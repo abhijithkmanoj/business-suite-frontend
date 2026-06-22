@@ -8,11 +8,11 @@ export default defineConfig({
     proxy: {
       // Proxy API requests to backend; keep SPA routes (e.g. /crm) handled by Vite
       '/api': {
-        target: 'business-suite-backend.railway.internal',
+        target: 'business-suite-backend-production-7cff.up.railway.app',
         changeOrigin: true,
       },
       '/uploads': {
-        target: 'business-suite-backend.railway.internal',
+        target: 'business-suite-backend-production-7cff.up.railway.app',
         changeOrigin: true,
       }
     }
