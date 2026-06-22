@@ -1,0 +1,519 @@
+/* Pipeline Settings - Redesigned */
+
+.ps-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ps-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ps-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.ps-subtitle {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: var(--text-secondary, #6b7280);
+}
+
+.ps-error {
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  color: #ef4444;
+  font-size: 14px;
+}
+
+.ps-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 48px 20px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: var(--sidebar);
+  color: var(--text-secondary, #6b7280);
+}
+
+/* Pipeline Selector */
+.ps-selector {
+  margin-bottom: 4px;
+}
+
+/* Manage Panel */
+.ps-manage-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Segmented Toggle */
+.ps-segmented {
+  display: flex;
+  background: var(--sidebar);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 4px;
+  gap: 4px;
+  width: fit-content;
+}
+
+.ps-seg-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--text-secondary, #6b7280);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.ps-seg-btn:hover {
+  color: var(--text);
+  background: var(--hover);
+}
+
+.ps-seg-btn.active {
+  background: var(--sidebar);
+  color: var(--text);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+}
+
+/* Card */
+.ps-card {
+  background: var(--sidebar);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ps-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.ps-card-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.ps-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Form */
+.ps-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ps-form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ps-field-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.ps-textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--sidebar);
+  color: var(--text);
+  font-size: 14px;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 80px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ps-textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.ps-form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+/* Phase List */
+.ps-phase-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ps-phase-item {
+  background: var(--sidebar);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 14px;
+  transition: border-color 0.2s ease;
+}
+
+.ps-phase-item.pending {
+  border-color: rgba(59, 130, 246, 0.3);
+  background: rgba(59, 130, 246, 0.04);
+}
+
+.ps-phase-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.ps-phase-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+}
+
+.ps-phase-visual {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ps-phase-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.ps-phase-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.ps-phase-badges {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.ps-badge-sm {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.ps-badge-sm.warning {
+  background: rgba(245, 158, 11, 0.12);
+  color: #d97706;
+}
+
+.ps-badge-sm.info {
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--primary);
+}
+
+.ps-phase-controls {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+/* Icon Button */
+.ps-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--sidebar);
+  color: var(--text-secondary, #6b7280);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ps-icon-btn:hover:not(:disabled) {
+  background: var(--hover);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.ps-icon-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.ps-icon-btn.danger {
+  color: #ef4444;
+}
+
+.ps-icon-btn.danger:hover:not(:disabled) {
+  background: rgba(239, 68, 68, 0.08);
+  border-color: #ef4444;
+  color: #ef4444;
+}
+
+/* Phase Edit Inline */
+.ps-phase-edit {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ps-phase-edit-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.ps-phase-edit-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Input Small */
+.ps-input-sm {
+  flex: 1;
+  min-width: 120px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--sidebar);
+  color: var(--text);
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ps-input-sm:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Color Picker */
+.ps-color-picker {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--sidebar);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.ps-color-picker input[type="color"] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.ps-color-swatch {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  pointer-events: none;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.ps-color-picker[data-tooltip]:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  background: rgba(15, 23, 42, 0.92);
+  color: #fff;
+  padding: 5px 9px;
+  border-radius: 6px;
+  font-size: 12px;
+  z-index: 10;
+}
+
+/* Checkbox Label */
+.ps-check-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.ps-check-label input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: var(--primary);
+}
+
+/* Status Message */
+.ps-status {
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  border: 1px solid transparent;
+}
+
+.ps-status.success {
+  background: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+  border-color: rgba(34, 197, 94, 0.25);
+}
+
+.ps-status.error {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border-color: rgba(239, 68, 68, 0.25);
+}
+
+.ps-status.info {
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--primary);
+  border-color: rgba(59, 130, 246, 0.25);
+}
+
+/* Add Phase */
+.ps-add-phase {
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ps-add-phase h4 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.ps-add-phase-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.ps-add-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--primary);
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.ps-add-btn:hover {
+  filter: brightness(1.08);
+}
+
+.ps-add-btn:active {
+  transform: scale(0.95);
+}
+
+/* Empty state */
+.ps-empty {
+  padding: 24px;
+  text-align: center;
+  color: var(--text-secondary, #6b7280);
+  font-size: 14px;
+  background: var(--sidebar);
+  border-radius: 10px;
+  border: 1px dashed var(--border);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .ps-segmented {
+    width: 100%;
+  }
+
+  .ps-seg-btn {
+    flex: 1;
+    justify-content: center;
+    font-size: 13px;
+    padding: 10px 12px;
+  }
+
+  .ps-phase-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ps-phase-controls {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .ps-form-actions {
+    flex-direction: column;
+  }
+
+  .ps-form-actions button {
+    width: 100%;
+  }
+}
